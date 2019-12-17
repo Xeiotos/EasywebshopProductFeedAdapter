@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.ServiceModel.Syndication" Version="4.7.0" />
   </ItemGroup>
 
 </Project>
