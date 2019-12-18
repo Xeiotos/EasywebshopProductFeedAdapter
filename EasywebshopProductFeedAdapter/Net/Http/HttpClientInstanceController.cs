@@ -11,7 +11,7 @@ namespace EasywebshopProductFeedAdapter.Net.Http
 {
     public class HttpClientInstanceController
     {
-        static readonly HttpClient httpClient = new HttpClient();
+        static readonly HttpClient _httpClient = new HttpClient();
 
         public Task<HttpResponseMessage> Post(IAgent agent)
         {
@@ -23,7 +23,7 @@ namespace EasywebshopProductFeedAdapter.Net.Http
                         new AuthenticationHeaderValue(agent.AuthorizationType.Value, agent.Token);
                 }
 
-                return httpClient.SendAsync(requestMessage); //Return response
+                return _httpClient.SendAsync(requestMessage); //Return response
             }
         }
     }
