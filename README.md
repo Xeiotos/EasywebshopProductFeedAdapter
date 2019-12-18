@@ -11,7 +11,7 @@ Configuration of the API is done via environment variables.
 
 Non-sensitive information is configured via appdata.json
 
-| Field | Explanation | Format | Default
+| Field | Explanation | Format | Default |
 | ------ | ------ | ------ | ------ |
 | Easywebshop:API_URL | The easywebshop api url. | FQDN + Path | https://www.easywebshop.com/api/ |
 | Easywebshop:Url | The fully qualified domain name of your webshop | FQDN | N/A |
@@ -19,7 +19,8 @@ Non-sensitive information is configured via appdata.json
 | Easywebshop:CountryCode | The country of which your webshop uses the currency. | ISO 3166-1 Alpha-2 | BE |
 
 Shipping locations can be added as a list to appdata.json
-| Field | Explanation | Format | Default
+
+| Field | Explanation | Format | Default |
 | ------ | ------ | ------ | ------ |
 | Easywebshop:Shipping:Country | The country to which you ship. | FQDN + Path | BE |
 | Easywebshop:Shipping:Service | Shipping service | String | Standard |
