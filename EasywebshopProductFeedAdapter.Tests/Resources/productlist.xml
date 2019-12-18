@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<productlist>
+  <product>
+    <code>Gegraveerde box</code>
+    <category>
+      <name lang="nl">KAFT - BOEKJE - BOX</name>
+    </category>
+    <name lang="nl">Gegraveerde box</name>
+    <description lang="nl">Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&amp;nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)</description>
+    <price>5.5</price>
+    <stock>0</stock>
+    <weight>0</weight>
+    <last_update>2019-11-25 17:18:05</last_update>
+    <vat_code>0</vat_code>
+    <thumbnail no="1">https://www.ewimg.com/shops/ecocards/thumbs/gegraveerde-box.jpg</thumbnail>
+    <image no="1">https://www.ewimg.com/shops/ecocards/gegraveerde-box.jpg</image>
+    <thumbnail no="2">https://www.ewimg.com/shops/ecocards/thumbs/gegraveerde-box-2.jpg</thumbnail>
+    <image no="2">https://www.ewimg.com/shops/ecocards/gegraveerde-box-2.jpg</image>
+    <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    <property>
+      <code>Box 40x40x40mm</code>
+      <name lang="nl">Box 40x40x40mm</name>
+      <description lang="nl">Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&amp;nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)</description>
+      <price>5.5</price>
+      <stock>100</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+    <property>
+      <code>Box 60x60x60mm</code>
+      <name lang="nl">Box 60x60x60mm</name>
+      <description lang="nl">Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&amp;nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)</description>
+      <price>7.5</price>
+      <stock>100</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+    <property>
+      <code>Box 80x80x80mm</code>
+      <name lang="nl">Box 80x80x80mm</name>
+      <description lang="nl">Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&amp;nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)</description>
+      <price>12</price>
+      <stock>100</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+  </product>
+
+  <product>
+    <code>Vlagletters</code>
+    <category>
+      <name lang="nl">LETTERS &amp; CIJFERS</name>
+    </category>
+    <name lang="nl">Vlagletters</name>
+    <description lang="nl">Lasergesneden&amp;nbsp;vlagjes met uitgesneden letter en montagegaten. Materiaal: Triplex, 3mm dikAfmetingen: 15x15cm, andere afmetingen mogelijk.</description>
+    <price>1.95</price>
+    <stock>0</stock>
+    <weight>0.04</weight>
+    <last_update>2019-11-25 17:15:01</last_update>
+    <vat_code>0</vat_code>
+    <thumbnail no="1">https://www.ewimg.com/shops/ecocards/thumbs/lettervlag-scrabbleletters-hout.jpg</thumbnail>
+    <image no="1">https://www.ewimg.com/shops/ecocards/lettervlag-scrabbleletters-hout.jpg</image>
+    <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    <params>
+      S,nl,KIES UW LETTER,[A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|@|&amp;|Hartje],0,1
+    </params>
+  </product>
+
+  <product>
+    <code>Staande houten kaart</code>
+    <category>
+      <name lang="nl">GEBOORTE-HUWELIJK</name>
+    </category>
+    <name lang="nl">3D staande houten kaart</name>
+    <description lang="nl">3D-kaartje geboorte- of huwelijkskaartje, afmetingen +/- 11x4,5x6cmInteresse of een eigen ideetje? Kom gerust eens langs, of neem contact met ons op.</description>
+    <price>3.20</price>
+    <stock>0</stock>
+    <weight>0</weight>
+    <last_update>2019-11-25 17:08:20</last_update>
+    <vat_code>0</vat_code>
+    <thumbnail no="1">https://www.ewimg.com/shops/ecocards/thumbs/staande-houten-kaart-3d-staande-houten-kaart.jpg</thumbnail>
+    <image no="1">https://www.ewimg.com/shops/ecocards/staande-houten-kaart-3d-staande-houten-kaart.jpg</image>
+    <thumbnail no="2">https://www.ewimg.com/shops/ecocards/thumbs/staande-houten-kaart-3d-staande-houten-kaart-2.jpg</thumbnail>
+    <image no="2">https://www.ewimg.com/shops/ecocards/staande-houten-kaart-3d-staande-houten-kaart-2.jpg</image>
+    <thumbnail no="3">https://www.ewimg.com/shops/ecocards/thumbs/staande-houten-kaart-3d-staande-houten-kaart-3.jpg</thumbnail>
+    <image no="3">https://www.ewimg.com/shops/ecocards/staande-houten-kaart-3d-staande-houten-kaart-3.jpg</image>
+    <thumbnail no="4">https://www.ewimg.com/shops/ecocards/thumbs/staande-houten-kaart-3d-staande-houten-kaart-4.jpg</thumbnail>
+    <image no="4">https://www.ewimg.com/shops/ecocards/staande-houten-kaart-3d-staande-houten-kaart-4.jpg</image>
+    <minimum_purchase_quantity>1</minimum_purchase_quantity>
+  </product>
+
+  <product>
+    <code>Kaartje op kurk</code>
+    <category>
+      <name lang="nl">GEBOORTE-HUWELIJK</name>
+    </category>
+    <name lang="nl">Kaartje op kurk</name>
+    <description lang="nl">Uniek kaartje, lasergegraveerd in kurk! Eigen ontwerpen zijn mogelijk. Verkrijgbaar in de volgende diktes: 1mm, 2mm.</description>
+    <price>3.55</price>
+    <stock>0</stock>
+    <weight>0</weight>
+    <last_update>2019-11-25 16:56:27</last_update>
+    <vat_code>0</vat_code>
+    <thumbnail no="1">https://www.ewimg.com/shops/ecocards/thumbs/13726372-1.jpg</thumbnail>
+    <image no="1">https://www.ewimg.com/shops/ecocards/13726372-1.jpg</image>
+    <thumbnail no="2">https://www.ewimg.com/shops/ecocards/thumbs/13726372-2.jpg</thumbnail>
+    <image no="2">https://www.ewimg.com/shops/ecocards/13726372-2.jpg</image>
+    <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    <property>
+      <code>Kaartje op kurk 1mm</code>
+      <name lang="nl">Kaartje op kurk 1mm</name>
+      <description lang="nl">Uniek kaartje, lasergegraveerd in kurk! Eigen ontwerpen zijn mogelijk. Verkrijgbaar in de volgende diktes: 1mm, 2mm.</description>
+      <price>3.55</price>
+      <stock>100</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+    <property>
+      <code>Kaartje op kurk 2mm</code>
+      <name lang="nl">Kaartje op kurk 2mm</name>
+      <description lang="nl">Uniek kaartje, lasergegraveerd in kurk! Eigen ontwerpen zijn mogelijk. Verkrijgbaar in de volgende diktes: 1mm, 2mm.</description>
+      <price>3.80</price>
+      <stock>100</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+  </product>
+
+  <product>
+    <code>Wijnkist gegraveerd</code>
+    <category>
+      <name lang="nl">KOFFERTJES EN WIJNKISTEN</name>
+    </category>
+    <name lang="nl">Wijnkist gegraveerd</name>
+    <description lang="nl">
+      Wijnkist, met lasergegraveerd/lasergesneden beeld, geschikt voor 1 fles (niet meegeleverd)
+      Ideaal als kraamcadeau of bij verjaardag, nieuwjaar.  Personaliseren kan op aanvraag, prijs: +€8
+    </description>
+    <price>18.00</price>
+    <stock>99</stock>
+    <weight>0.5</weight>
+    <last_update>2019-11-25 16:08:11</last_update>
+    <vat_code>0</vat_code>
+    <thumbnail no="1">https://www.ewimg.com/shops/ecocards/thumbs/wijnkist-gegraveerd-wijnkist-gegraveerd.jpg</thumbnail>
+    <image no="1">https://www.ewimg.com/shops/ecocards/wijnkist-gegraveerd-wijnkist-gegraveerd.jpg</image>
+    <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    <property>
+      <code>Wijnkist peter</code>
+      <name lang="nl">Wijnkist peter</name>
+      <description lang="nl">
+        Wijnkist, met lasergegraveerd/lasergesneden beeld, geschikt voor 1 fles (niet meegeleverd)
+        Ideaal als kraamcadeau of bij verjaardag, nieuwjaar.  Personaliseren kan op aanvraag, prijs: +€8
+      </description>
+      <price>18.00</price>
+      <stock>50</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+    <property>
+      <code>Wijnkist ijskristal</code>
+      <name lang="nl">Wijnkist ijskristal</name>
+      <description lang="nl">
+        Wijnkist, met lasergegraveerd/lasergesneden beeld, geschikt voor 1 fles (niet meegeleverd)
+        Ideaal als kraamcadeau of bij verjaardag, nieuwjaar.  Personaliseren kan op aanvraag, prijs: +€8
+      </description>
+      <price>18.00</price>
+      <stock>65</stock>
+      <status>Available</status>
+      <minimum_purchase_quantity>1</minimum_purchase_quantity>
+    </property>
+
+  </product>
+</productlist>
