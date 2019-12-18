@@ -17,6 +17,7 @@ Non-sensitive information is configured via appdata.json
 | Easywebshop:Url | The fully qualified domain name of your webshop | FQDN | N/A |
 | Easywebshop:Brand | The brand under which you publish your products. See caveats. | String | N/A |
 | Easywebshop:CountryCode | The country of which your webshop uses the currency. | ISO 3166-1 Alpha-2 | BE |
+| Update_Interval | How many minutes to wait between EasyWebshop API calls. | long | 30 |
 
 Shipping locations can be added as a list to appdata.json
 
