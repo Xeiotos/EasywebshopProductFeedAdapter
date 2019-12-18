@@ -15,11 +15,11 @@ namespace EasywebshopProductFeedAdapter.Services
         private readonly HttpClientInstanceController _httpClientController;
         private readonly EasyWebshopFeedDeserializerService _deserializerService;
 
-        public ProductListService(HttpClientInstanceController httpClientInstanceController, EasyWebshopFeedDeserializerService deserializerService, IAgent agent)
+        public ProductListService(HttpClientInstanceController httpClientInstanceController, EasyWebshopFeedDeserializerService deserializerService, AgentProviderService _agentService)
         {
             _httpClientController = httpClientInstanceController;
             _deserializerService = deserializerService;
-            this._agent = agent;
+            _agent = _agentService.Agent;
         }
 
         public async Task<Feed> GetProductListAsync()
