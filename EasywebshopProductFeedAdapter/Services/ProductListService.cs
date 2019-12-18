@@ -21,9 +21,9 @@ namespace EasywebshopProductFeedAdapter.Services
             this._agent = agent;
         }
 
-        public async Task<XmlFeed> GetProductListAsync()
+        public async Task<Feed> GetProductListAsync()
         {
-            var feedSerializer = new XMLFeedSerializer();
+            var feedSerializer = new EasyWebshopFeedDeserializer();
             var response = await _httpClientController.Post(_agent);
             string responseContent = await response.Content.ReadAsStringAsync();
             return feedSerializer.Deserialize(responseContent);
