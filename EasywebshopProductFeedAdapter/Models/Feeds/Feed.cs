@@ -27,6 +27,7 @@ namespace EasywebshopProductFeedAdapter.Domain.Feeds
 
         public override void DeserializeFrom(IFeedSerializer serializer, string inputString)
         {
+            throw new NotImplementedException();
             //TODO (But not critical)
             //It's probably beneficial to not re-generate the XML Feed every time, 
             //but to deserialize the existing one and make modifications.

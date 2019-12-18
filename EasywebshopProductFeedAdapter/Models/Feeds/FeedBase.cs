@@ -11,7 +11,7 @@ namespace EasywebshopProductFeedAdapter.Domain.Feeds
     public abstract class FeedBase : IFeed
     {
 
-        public void SerializeTo(IFeedSerializer serializer, Stream outputStream)
+        public virtual void SerializeTo(IFeedSerializer serializer, Stream outputStream)
         {
             serializer.Serialize(this, outputStream);
         }

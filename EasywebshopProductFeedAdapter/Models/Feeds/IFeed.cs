@@ -1,5 +1,4 @@
-﻿using EasywebshopProductFeedAdapter.Domain.ProductLists;
-using EasywebshopProductFeedAdapter.Util.Serialization;
+﻿using EasywebshopProductFeedAdapter.Util.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
