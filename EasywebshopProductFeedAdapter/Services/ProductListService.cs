@@ -1,7 +1,6 @@
 ﻿using EasywebshopProductFeedAdapter.Domain.Agents;
 using EasywebshopProductFeedAdapter.Domain.Feeds;
 using EasywebshopProductFeedAdapter.Net.Http;
-using EasywebshopProductFeedAdapter.Util.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,19 +13,20 @@ namespace EasywebshopProductFeedAdapter.Services
 
         private readonly IAgent _agent;
         private readonly HttpClientInstanceController _httpClientController;
+        private readonly EasyWebshopFeedDeserializerService _deserializerService;
 
-        public ProductListService(HttpClientInstanceController httpClientInstanceController, IAgent agent)
+        public ProductListService(HttpClientInstanceController httpClientInstanceController, EasyWebshopFeedDeserializerService deserializerService, IAgent agent)
         {
             _httpClientController = httpClientInstanceController;
+            _deserializerService = deserializerService;
             this._agent = agent;
         }
 
         public async Task<Feed> GetProductListAsync()
         {
-            var feedSerializer = new EasyWebshopFeedDeserializer();
             var response = await _httpClientController.Post(_agent);
             string responseContent = await response.Content.ReadAsStringAsync();
-            return feedSerializer.Deserialize(responseContent);
+            return _deserializerService.Deserialize(responseContent);
         }
     }
 }

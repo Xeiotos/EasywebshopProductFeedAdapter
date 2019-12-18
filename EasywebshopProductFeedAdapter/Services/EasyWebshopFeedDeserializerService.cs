@@ -8,22 +8,29 @@ using System.Xml;
 using System.Xml.Serialization;
 using EasywebshopProductFeedAdapter.Domain.Feeds;
 using EasywebshopProductFeedAdapter.Extensions;
+using EasywebshopProductFeedAdapter.Util;
 using Geta.GoogleProductFeed.Models;
+using Microsoft.Extensions.Configuration;
 
-namespace EasywebshopProductFeedAdapter.Util.Serialization
+namespace EasywebshopProductFeedAdapter.Services
 {
-    public class EasyWebshopFeedDeserializer
+    public class EasyWebshopFeedDeserializerService
     {
         private readonly string _feedUrl;
         private readonly string _fqdn;
         private readonly string _culture;
+        private readonly string _brand;
+        private readonly List<Shipping> _shipping;
 
 
-        public EasyWebshopFeedDeserializer(string feedurl, string fqdn, string culture)
+        public EasyWebshopFeedDeserializerService(IConfiguration config)
         {
-            _feedUrl = feedurl;
-            _fqdn = fqdn;
-            _culture = culture;
+            _feedUrl = config.GetValue<string>("Feed_Url");
+            _fqdn = config.GetValue<string>("Easywebshop:Url");
+            _culture = config.GetValue<string>("Easywebshop:CountryCode");
+            _brand = config.GetValue<string>("Easywebshop:Brand");
+            _shipping = config.GetSection("Easywebshop:Shipping").Get<List<Shipping>>();
+
         }
 
         public Feed Deserialize(string inputString)
@@ -41,21 +48,15 @@ namespace EasywebshopProductFeedAdapter.Util.Serialization
             {
                 entries.Add(new Entry()
                 {
-                    Id = node.GetChild("code").Value,
-                    Title = node.GetChild("name").Value,
-                    Description = node.GetChild("description").Value,
-                    Link = urlFormatter.Format(node.GetChild("category").GetChild("name").Value, node.GetChild("code").Value),
-                    ImageLink = node.GetChild("image").Value,
+                    Id = node.GetChild("code").InnerText,
+                    Title = node.GetChild("name").InnerText,
+                    Description = node.GetChild("description").InnerText,
+                    Link = urlFormatter.Format(node.GetChild("category").GetChild("name").InnerText, node.GetChild("code").InnerText),
+                    ImageLink = node.GetChild("image").InnerText,
                     Availability = "in stock",
-                    Price = node.GetChild("price").Value + new RegionInfo(_culture).ISOCurrencySymbol, //Google expects ISO 4217 formatted currency
-                    Shipping = new List<Shipping>() {
-                        new Shipping() {
-                            Country = null,
-                            Service = null,
-                            Price = null
-                        }
-                    },
-                    Brand = null
+                    Price = node.GetChild("price").InnerText + " " + new RegionInfo(_culture).ISOCurrencySymbol, //Google expects ISO 4217 formatted currency
+                    Shipping = _shipping,
+                    Brand = _brand
                 });
             }
 
@@ -64,7 +65,7 @@ namespace EasywebshopProductFeedAdapter.Util.Serialization
                 Entries = entries,
                 Link = _feedUrl,
                 Title = "Feed for Google Merchant center",
-                Updated = DateTime.Parse(rootElement.FirstChild.GetChild("last_update")?.Value, CultureInfo.InvariantCulture)
+                Updated = DateTime.Parse(rootElement.FirstChild.GetChild("last_update")?.InnerText, CultureInfo.InvariantCulture)
             };
             //A note on the Updated property
             //EasyWebshop uses Universal Sortable ("u"): yyyy-MM-dd HH:mm:ssZ, so InvariantCulture is used just to be safe

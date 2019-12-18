@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasywebshopProductFeedAdapter", "EasywebshopProductFeedAdapter\EasywebshopProductFeedAdapter.csproj", "{57622E2F-BE91-4D8D-9780-3DA615848749}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasywebshopProductFeedAdapter.Tests", "EasywebshopProductFeedAdapter.Tests\EasywebshopProductFeedAdapter.Tests.csproj", "{4BC8E36F-DCE1-4993-8260-8F3748619B9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{57622E2F-BE91-4D8D-9780-3DA615848749}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57622E2F-BE91-4D8D-9780-3DA615848749}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57622E2F-BE91-4D8D-9780-3DA615848749}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC8E36F-DCE1-4993-8260-8F3748619B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC8E36F-DCE1-4993-8260-8F3748619B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC8E36F-DCE1-4993-8260-8F3748619B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC8E36F-DCE1-4993-8260-8F3748619B9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
