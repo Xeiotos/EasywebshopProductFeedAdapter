@@ -8,7 +8,7 @@ namespace EasywebshopProductFeedAdapter.Services
 {
     public class FeedWriterService
     {
-        public void Write(XmlFeed feed)
+        public void Write(Feed feed)
         {
             throw new NotImplementedException();
         }
