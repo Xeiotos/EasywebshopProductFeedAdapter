@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EasywebshopProductFeedAdapter.Domain.Agents;
+using EasywebshopProductFeedAdapter.Extensions;
+using EasywebshopProductFeedAdapter.Models.Authorization;
 using EasywebshopProductFeedAdapter.Net.Http;
 using EasywebshopProductFeedAdapter.Services;
 using Microsoft.AspNetCore.Builder;
@@ -28,12 +31,21 @@ namespace EasywebshopProductFeedAdapter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<HttpClientInstanceController>();
-            services.AddScoped<FeedUpdateService>();
-            services.AddScoped<ProductListService>();
-            services.AddScoped<EasyWebshopFeedDeserializerService>();
-            services.AddScoped<FeedFormatterService>();
-            services.AddScoped<FeedWriterService>();
-            services.AddSingleton<AgentProviderService>();
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton<IFeedWriterService, FeedWriterService>();
+
+            services.AddFeedGenerator(options =>
+            {
+                options.Agent = new EasyWebShopAgent(
+                    Configuration.GetValue<string>("Username"), 
+                    Configuration.GetValue<string>("Password"), 
+                    AuthorizationType.Basic, 
+                    Configuration.GetValue<string>("Easywebshop:API_URL")
+                );
+            });
+
+            services.AddSingleton<EasyWebshopFeedDeserializerService>();
+            services.AddSingleton<IHostedService, FeedUpdateService>();
 
             services.AddControllers();
         }
@@ -49,6 +61,8 @@ namespace EasywebshopProductFeedAdapter
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

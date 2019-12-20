@@ -1,15 +1,22 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
+// Modified from Geta Digital
+
 
 using System;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Geta.GoogleProductFeed.Models
 {
     [XmlType(TypeName = "shipping")]
-    [Serializable]
     public class Shipping
     {
+        public Shipping()
+        {
+
+        }
+
         [XmlElement("country", Namespace = "http://base.google.com/ns/1.0")]
         public string Country { get; set; }
 
