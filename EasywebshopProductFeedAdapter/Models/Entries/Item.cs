@@ -1,16 +1,22 @@
 ﻿// Copyright (c) Geta Digital. All rights reserved.
 // Licensed under Apache-2.0. See the LICENSE file in the project root for more information
+// Modified from Geta Digital
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Geta.GoogleProductFeed.Models
 {
-    [XmlType(TypeName = "entry")]
-    [Serializable]
-    public class Entry
+    [XmlType(TypeName = "item")]
+    public class Item
     {
+        public Item()
+        {
+
+        }
+
         [XmlElement("id", Namespace = "http://base.google.com/ns/1.0")]
         public string Id { get; set; }
 
@@ -26,12 +32,15 @@ namespace Geta.GoogleProductFeed.Models
         [XmlElement("image_link", Namespace = "http://base.google.com/ns/1.0")]
         public string ImageLink { get; set; }
 
+        [DataMember]
         [XmlElement("additional_image_link", Namespace = "http://base.google.com/ns/1.0")]
         public string[] AdditionalImageLinks { get; set; }
 
+        [DataMember]
         [XmlElement("condition", Namespace = "http://base.google.com/ns/1.0")]
         public string Condition { get; set; }
 
+        [DataMember]
         [XmlElement("availability", Namespace = "http://base.google.com/ns/1.0")]
         public string Availability { get; set; }
 
