@@ -31,3 +31,5 @@ Shipping locations can be added as a list to appdata.json
 
 ## Caveats
 A great deal of information is pulled from the EasyWebshop feed. However, EasyWebshop does not send brand information in it's feed. (AFAIK it doesn't even support brands in it's webshop software). So you will have to provide your own brand in the configuration, which will be applied globally (to all products).
+
+Please note that Easywebshop limits API requests to 96 in a 24 hour period.
