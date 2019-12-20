@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace EasywebshopProductFeedAdapter.Services
     {
         private readonly string _feedUrl;
         private readonly string _fqdn;
-        private readonly string _culture;
+        private readonly string _countryCode;
         private readonly string _brand;
         private readonly List<Shipping> _shipping;
 
@@ -27,7 +28,7 @@ namespace EasywebshopProductFeedAdapter.Services
         {
             _feedUrl = config.GetValue<string>("Feed_Url");
             _fqdn = config.GetValue<string>("Easywebshop:Url");
-            _culture = config.GetValue<string>("Easywebshop:CountryCode");
+            _countryCode = config.GetValue<string>("Easywebshop:CountryCode");
             _brand = config.GetValue<string>("Easywebshop:Brand");
             _shipping = config.GetSection("Easywebshop:Shipping").Get<List<Shipping>>();
 
@@ -40,29 +41,32 @@ namespace EasywebshopProductFeedAdapter.Services
 
             var rootElement = xml.DocumentElement;
 
-            var entries = new List<Entry>();
+            var items = new List<Item>();
 
             var urlFormatter = new EasyWebshopUrlFormatter(_fqdn);
 
             foreach (XmlNode node in rootElement.ChildNodes)
             {
-                entries.Add(new Entry()
+                items.Add(new Item()
                 {
                     Id = node.GetChild("code").InnerText,
-                    Title = node.GetChild("name").InnerText,
-                    Description = node.GetChild("description").InnerText,
+                    Title = node.GetChild("name") == null ? node.GetChild("code").InnerText : node.GetChild("name").InnerText,
+                    Description = node.GetChild("description") == null ?  "" : node.GetChild("description").InnerText,
                     Link = urlFormatter.Format(node.GetChild("category").GetChild("name").InnerText, node.GetChild("code").InnerText),
-                    ImageLink = node.GetChild("image").InnerText,
+                    ImageLink = node.GetChild("image")?.InnerText,
                     Availability = "in stock",
-                    Price = node.GetChild("price").InnerText + " " + new RegionInfo(_culture).ISOCurrencySymbol, //Google expects ISO 4217 formatted currency
+                    Price = ParsePrice(node.GetChild("price").InnerText),
                     Shipping = _shipping,
                     Brand = _brand
                 });
             }
 
+            //Discard entries with invalid price
+            var validItems = items.Where(e => e.Price != "NaN").ToList();
+
             var feed = new Feed()
             {
-                Entries = entries,
+                Items = validItems,
                 Link = _feedUrl,
                 Title = "Feed for Google Merchant center",
                 Updated = DateTime.Parse(rootElement.FirstChild.GetChild("last_update")?.InnerText, CultureInfo.InvariantCulture)
@@ -73,6 +77,16 @@ namespace EasywebshopProductFeedAdapter.Services
             //As the list is provided in order with the most recently modified product first, this should work just as well
 
             return feed;
+        }
+
+        private string ParsePrice(string price)
+        {
+            if (double.TryParse(price, NumberStyles.Number, CultureInfo.InvariantCulture, out _))
+            {
+                return price + " " + new RegionInfo(_countryCode).ISOCurrencySymbol; //Google expects ISO 4217 formatted currency
+            } else {
+                return "NaN";
+            }
         }
     }
 }
