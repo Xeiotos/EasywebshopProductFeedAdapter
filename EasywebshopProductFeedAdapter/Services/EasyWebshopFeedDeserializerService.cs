@@ -47,12 +47,13 @@ namespace EasywebshopProductFeedAdapter.Services
 
             foreach (XmlNode node in rootElement.ChildNodes)
             {
+                var productName = node.GetChild("name") == null ? node.GetChild("code").InnerText : node.GetChild("name").InnerText;
                 items.Add(new Item()
                 {
                     Id = node.GetChild("code").InnerText,
-                    Title = node.GetChild("name") == null ? node.GetChild("code").InnerText : node.GetChild("name").InnerText,
+                    Title = productName,
                     Description = node.GetChild("description") == null ?  "" : node.GetChild("description").InnerText,
-                    Link = urlFormatter.Format(node.GetChild("category").GetChild("name").InnerText, node.GetChild("code").InnerText),
+                    Link = urlFormatter.Format(node.GetChild("category").GetChild("name").InnerText, productName),
                     ImageLink = node.GetChild("image")?.InnerText,
                     Availability = "in stock",
                     Price = ParsePrice(node.GetChild("price").InnerText),

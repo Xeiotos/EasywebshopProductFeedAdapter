@@ -17,11 +17,11 @@ namespace EasywebshopProductFeedAdapter.Util
         {
             _fqdn = fqdn.TrimEnd(new char[] { '/' });
         }
-        public string Format(string category, string productCode)
+        public string Format(string category, string productName)
         {
             var formattedCategory = category.Replace(" - ", "-").Replace("&", "");
-            var formattedProductCode = productCode.Replace(" - ", "-").Replace("&", "and");
-            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductCode.Replace(' ', '-');
+            var formattedProductName = productName.Replace(" - ", "-").Replace("&", "and");
+            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductName.Replace(' ', '-');
         }
     }
 }
