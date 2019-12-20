@@ -1,5 +1,5 @@
 ﻿using EasywebshopProductFeedAdapter.Domain.Agents;
-using EasywebshopProductFeedAdapter.Domain.Authorization;
+using EasywebshopProductFeedAdapter.Models.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +13,9 @@ namespace EasywebshopProductFeedAdapter.Net.Http
     {
         static readonly HttpClient _httpClient = new HttpClient();
 
-        public Task<HttpResponseMessage> Post(IAgent agent)
+        public Task<HttpResponseMessage> Get(IAgent agent)
         {
-            using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, agent.ConnectionString))
+            using (var requestMessage = new HttpRequestMessage(HttpMethod.Get, agent.ConnectionString))
             {
                 if (agent.AuthorizationType != AuthorizationType.None)
                 {
