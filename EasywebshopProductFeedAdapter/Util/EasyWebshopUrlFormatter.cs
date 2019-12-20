@@ -19,7 +19,9 @@ namespace EasywebshopProductFeedAdapter.Util
         }
         public string Format(string category, string productCode)
         {
-            return _fqdn + category.Replace(' ', '-') + productCode.Replace(' ', '-');
+            var formattedCategory = category.Replace(" - ", "-").Replace("&", "");
+            var formattedProductCode = productCode.Replace(" - ", "-").Replace("&", "and");
+            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductCode.Replace(' ', '-');
         }
     }
 }
