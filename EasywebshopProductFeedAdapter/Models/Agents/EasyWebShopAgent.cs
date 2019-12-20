@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EasywebshopProductFeedAdapter.Domain.Authorization;
+using EasywebshopProductFeedAdapter.Models.Authorization;
 using EasywebshopProductFeedAdapter.Extensions;
 
 namespace EasywebshopProductFeedAdapter.Domain.Agents
@@ -12,13 +12,16 @@ namespace EasywebshopProductFeedAdapter.Domain.Agents
         private string _username;
         private string _password;
         public string Token => (_username + ":" + _password).ToBase64();
-        public AuthorizationType AuthorizationType { get; }
-        public string ConnectionString { get; set; }
+        public AuthorizationType AuthorizationType { get; private set; }
+        public string ConnectionString { get; private set; }
 
 
-        public EasyWebShopAgent()
+        public EasyWebShopAgent(string username, string password, AuthorizationType authorizationType, string connectionString)
         {
-
+            _username = username;
+            _password = password;
+            AuthorizationType = authorizationType;
+            ConnectionString = connectionString;
         }
     }
 }

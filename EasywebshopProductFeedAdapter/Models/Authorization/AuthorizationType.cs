@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EasywebshopProductFeedAdapter.Domain.Authorization
+namespace EasywebshopProductFeedAdapter.Models.Authorization
 {
     public sealed class AuthorizationType
     {

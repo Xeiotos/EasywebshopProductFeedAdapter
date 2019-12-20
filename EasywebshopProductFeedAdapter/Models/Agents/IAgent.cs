@@ -1,4 +1,4 @@
-﻿using EasywebshopProductFeedAdapter.Domain.Authorization;
+﻿using EasywebshopProductFeedAdapter.Models.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace EasywebshopProductFeedAdapter.Domain.Agents
     {
         string Token { get; }
         AuthorizationType AuthorizationType { get; }
-        string ConnectionString { get; set; }
+        string ConnectionString { get; }
     }
 }
