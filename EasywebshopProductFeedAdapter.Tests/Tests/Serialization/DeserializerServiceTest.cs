@@ -56,7 +56,7 @@ namespace EasywebshopProductFeedAdapter.Tests.Tests.Serialization
         {
             Feed feed = _deserializerService.Deserialize(_xmlDocument.InnerXml);
 
-            Assert.Equal(5, feed.Entries.Count);
+            Assert.Equal(5, feed.Items.Count);
         }
 
         [Fact]
@@ -64,14 +64,14 @@ namespace EasywebshopProductFeedAdapter.Tests.Tests.Serialization
         {
             Feed feed = _deserializerService.Deserialize(_xmlDocument.InnerXml);
 
-            var firstEntry = feed.Entries[0];
+            var firstItem = feed.Items[0];
 
-            Assert.Equal("Gegraveerde box", firstEntry.Id);
-            Assert.Equal("https://www.ewimg.com/shops/ecocards/gegraveerde-box.jpg", firstEntry.ImageLink);
-            Assert.Equal("5.5 EUR", firstEntry.Price);
-            Assert.Equal("Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)", firstEntry.Description);
-            Assert.Equal("in stock", firstEntry.Availability);
-            Assert.Equal("Gegraveerde box", firstEntry.Title);
+            Assert.Equal("Gegraveerde box", firstItem.Id);
+            Assert.Equal("https://www.ewimg.com/shops/ecocards/gegraveerde-box.jpg", firstItem.ImageLink);
+            Assert.Equal("5.5 EUR", firstItem.Price);
+            Assert.Equal("Gegraveerde gesloten box (hol), gegraveerd op 5 zijden. Andere afmetingen en opdruk mogelijk.&nbsp; Personaliseren kan op aanvraag, prijs: +€8 (per ontwerp)", firstItem.Description);
+            Assert.Equal("in stock", firstItem.Availability);
+            Assert.Equal("Gegraveerde box", firstItem.Title);
         }
 
         [Fact]
@@ -79,10 +79,10 @@ namespace EasywebshopProductFeedAdapter.Tests.Tests.Serialization
         {
             Feed feed = _deserializerService.Deserialize(_xmlDocument.InnerXml);
 
-            var firstEntryShipping = feed.Entries[0].Shipping;
-            var shippingBE = feed.Entries[0].Shipping[0];
+            var firstItemShipping = feed.Items[0].Shipping;
+            var shippingBE = feed.Items[0].Shipping[0];
 
-            Assert.Equal(2, firstEntryShipping.Count);
+            Assert.Equal(2, firstItemShipping.Count);
             Assert.Equal("BE", shippingBE.Country);
             Assert.Equal("Standard", shippingBE.Service);
             Assert.Equal("6.00 EUR", shippingBE.Price);
