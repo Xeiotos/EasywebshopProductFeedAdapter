@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasywebshopProductFeedAdapter.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace EasywebshopProductFeedAdapter.Util
         {
             var formattedCategory = category.Replace(" - ", "-").Replace("&", "");
             var formattedProductName = productName.Replace(" - ", "-").Replace("&", "and");
-            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductName.Replace(' ', '-').Substring(0, 39);
+            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductName.Replace(' ', '-').Truncate(39);
         }
     }
 }
