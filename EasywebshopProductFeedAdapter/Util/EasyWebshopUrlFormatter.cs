@@ -21,7 +21,7 @@ namespace EasywebshopProductFeedAdapter.Util
         {
             var formattedCategory = category.Replace(" - ", "-").Replace("&", "");
             var formattedProductName = productName.Replace(" - ", "-").Replace("&", "and");
-            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductName.Replace(' ', '-');
+            return _fqdn + "/" + formattedCategory.Replace(' ', '-') + "/" + formattedProductName.Replace(' ', '-').Substring(0, 39);
         }
     }
 }
