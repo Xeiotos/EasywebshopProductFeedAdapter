@@ -2,15 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace EasywebshopProductFeedAdapter.Domain.Feeds
 {
     [XmlRoot("feed")]
-    [Serializable]
     public class Feed
     {
+        public Feed()
+        {
+
+        }
 
         [XmlElement("title")]
         public string Title { get; set; }
@@ -22,6 +26,6 @@ namespace EasywebshopProductFeedAdapter.Domain.Feeds
         public DateTime Updated { get; set; }
 
         [XmlElement("entry")]
-        public List<Entry> Entries { get; set; }
+        public List<Item> Items { get; set; }
     }
 }
